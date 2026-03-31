@@ -1,0 +1,12 @@
+version: "3.9"
+
+services:
+  tradingagents:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    network_mode: bridge
+    container_name: TradingAgents-container
+    ports:
+      - "11360:8501"
+    restart: unless-stopped
